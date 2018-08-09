@@ -8,88 +8,61 @@ window.initializeFirebase = () => {
     storageBucket: 'visitapp-700e9.appspot.com',
     messagingSenderId: '443650975761'
   });
+};
 
-// / Registro Usuarios Nuevos
-const btnSignUpModal = document.getElementById('btnSignUpModal');
+// New Admin
 
-
-const registrar = () => {
+window.newAdminForm = () => {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-  // cons t userName = document.getElementById('userName').value;
   localStorage.setItem('email', email);
-  // alert('Ingresa tus Datos');
-
-  firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
+  firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
     verificar();
-    console.log(verificar);
-  }).catch(function(error) {
-    // Handle Errors here.
+  }).catch((error) => {
     let errorCode = error.code;
     let errorMessage = error.message;
-    console.log(errorCode);
-    console.log(errorMessage);
-    // alert('Verifica datos');
-    // ...
   });
 };
-btnSignUpModal.addEventListener('click', registrar);
 
-// Ingreso de Usuario y contraseña
-const btnentrar = document.getElementById('btnentrar');
-
-
-const entrar = () => {
+window.adminLogIn = () => {
   const email1 = document.getElementById('email1').value;
   const password1 = document.getElementById('password1').value;
   localStorage.setItem('email1', email1);
   firebase.auth().signInWithEmailAndPassword(email1, password1)
-    .then(function() {
-      // promise.catch(console.log(e.message));
-      //window.location.href = 'lugar donde ir';
+    .then(() => {
+      console.log('Yay');
     })
-    .catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
+    .catch((error) => {
+      let errorCode = error.code;
+      let errorMessage = error.message;
       console.log(errorCode);
       console.log(errorMessage);
       alert('Verifica tus datos');
-      // ...
     });
 };
-btnentrar.addEventListener('click', entrar);
 
-// verificar correo
-const verificar = () => {
+window.verifyMail = () => {
   let user = firebase.auth().currentUser;
 
-  user.sendEmailVerification().then(function() {
-    // Email sent.
-  }).catch(function(error) {
-    // An error happened.
+  user.sendEmailVerification().then(() => {
+    alert('Se envió un mail a tu correo para poder verificar tu cuenta.');
+  }).catch((error) => {
+    console.log(error);
+    alert('Hubo un problema con tu registro.');
   });
 };
 
-// Observador
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    let usuarioAct = user.usuarioAct;
-    console.log('usuario activo');
-    localStorage.setItem('usuarioAct', usuarioAct);
-    //window.location.href = 'lugar donde ir';
-    // User is signed in.
+    let usuarioAct = user.email;
+    console.log(usuarioAct);
   } else {
     console.log('No hay usuario activo');
-
-    // No user is signed in.
   }
 });
 
-const btnLogOut = document.getElementById('btnLogOut');
-
-btnLogOut.addEventListener('click', event => {
+btnLogOut.addEventListener('click', logOut());
+window.logOut = () => {
   firebase.auth().signOut();
   window.location.href = '../views/login.html';
-});
 };
