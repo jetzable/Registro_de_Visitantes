@@ -32,15 +32,19 @@ Nuestra propuesta integra los siguientes elementos:
  - **Usabilidad:** Interfaz intuitiva permitiendo que pueda ser manejada por diferentes perfiles de empleados, desde el guardia recepcionista,
    ejecutivos, etc.
 
+## Instalación
+Los usuarios (Visitantes/Administradores), podrán ingresar a traves de la URL (https://jetzable.github.io/Registro_de_Visitantes/src/)
+Podrá ingresar desde un dispositivo móvil o una PC.
+
 ## Motivaciones
 
 Generar un cambio en la experiencia de reconocimiento y registro de visitantes en espacios compartidos (ya sea públicos o privados), desarrollando un proceso más amigable que involucre a las dos partes como participantes dando sentido de seguridad y personalización.
 
-## Rename a file
+## Historias de usuario (Features)
 
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
+  **Usuario Visitante**
+_El visitante será cualquier persona que esté interesado en ingresar al lugar en cuestión (coworking), que cuente con un motivo y una persona a la que visité.
 
-## Historias de usuario
 -   Yo como visitante quisiera poder ingresar a través de una URL - GitHub Pages
     
 -   Yo como visitante quisiera poder elegir la opción de “Registro de Visitante”, para ingresar al formulario de registro. - Botón “Registro de Visita” en HTML principal que redirige al formulario.
@@ -48,7 +52,9 @@ You can rename the current file by clicking the file name in the navigation bar 
 -   Yo como usuario quisiera llenar el formulario con mis datos, además de poder elegir el nombre de la persona a la que visitaré. - Formulario con inputs y un menú para elegir nombre de persona visitada.
     
 -   Yo como usuario quisiera recibir un id para cada registro que realice, mismo que podré entregar a la hora de mi visita para hacer el registro más rápido y eficiente. - Función que retorna el id de documento creado en una base de datos de registros en Firebase.
-    
+
+_El administrador será cualquier empleado de seguridad (recepción), o la misma persona visitada que pueda registrar al visitante a través de la aplicación.
+
 -   Yo como administrador quisiera tener una cuenta que me permitiera ingresar mi nombre de usuario y contraseña para acceder a las funcionalidades de admin.
     
 -   Yo como administrador quisiera tener la posibilidad de ingresar el id de registro del visitante para que el sistema envíe una notificación a la persona visitada.
