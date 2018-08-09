@@ -36,10 +36,6 @@ Nuestra propuesta integra los siguientes elementos:
 
 Generar un cambio en la experiencia de reconocimiento y registro de visitantes en espacios compartidos (ya sea públicos o privados), desarrollando un proceso más amigable que involucre a las dos partes como participantes dando sentido de seguridad y personalización.
 
-## Rename a file
-
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
-
 ## Historias de usuario
 -   Yo como visitante quisiera poder ingresar a través de una URL - GitHub Pages
     
