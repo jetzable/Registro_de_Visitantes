@@ -93,3 +93,15 @@ btnLogOut.addEventListener('click', event => {
   window.location.href = '../views/login.html';
 });
 };
+// correos emailjs
+
+var template_params = {
+   "from_name": "from_name_value",
+   "from_email": "from_email_value",
+   "subject": "subject_value",
+   "message": "message_value"
+}
+
+var service_id = "default_service";
+var template_id = "users_visitapp";
+emailjs.send(service_id,template_id,template_params);
