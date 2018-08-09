@@ -8,40 +8,61 @@ window.initializeFirebase = () => {
     storageBucket: 'visitapp-700e9.appspot.com',
     messagingSenderId: '443650975761'
   });
+  let db = firebase.firestore();
+  let dbSettings = { timestampsInSnapshots: true };
+  db.settings(dbSettings);
 };
 
 // New Admin
-
 window.newAdminForm = () => {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-  localStorage.setItem('email', email);
-  firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
-    verificar();
-  }).catch((error) => {
-    let errorCode = error.code;
-    let errorMessage = error.message;
-  });
-};
-
-window.adminLogIn = () => {
-  const email1 = document.getElementById('email1').value;
-  const password1 = document.getElementById('password1').value;
-  localStorage.setItem('email1', email1);
-  firebase.auth().signInWithEmailAndPassword(email1, password1)
+  firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(() => {
-      console.log('Yay');
+      verifyAccountWithEmail();
+      alert('Se ha enviado un correo a tu email para verificar tu cuenta.');
+      signOutUser();
+      location.href = ('login.html');
     })
     .catch((error) => {
+      // Handle Errors here.
       let errorCode = error.code;
       let errorMessage = error.message;
-      console.log(errorCode);
       console.log(errorMessage);
-      alert('Verifica tus datos');
+      if (errorCode === 'auth/invalid-email') {
+        alert('Por favor, ingresa un correo electrónico válido.');
+      } else if (errorCode === 'auth/weak-password') {
+        alert('Por favor, ingresa una contraseña.');
+      } else if (errorCode === 'auth/email-already-in-use') {
+        alert('Usuario ya registrado, por favor verifica tus datos.');
+      }
     });
 };
 
-window.verifyMail = () => {
+// Admin Login
+window.adminLogIn = () => {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+      console.log('se inicio sesión');
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      if (errorCode === 'auth/wrong-password') {
+        alert('Por favor, verifica tu contraseña.');
+      } else if (errorCode === 'auth/user-not-found' || errorCode === 'auth/invalid-email' || errorCode === 'auth/argument-error') {
+        alert('Por favor verifica tu usuario o Registrate para poder iniciar sesión.');
+      } else if (errorCode === 'auth/account-exists-with-different-credential') {
+        alert('El correo ya ha sido registrado');
+      }
+    });
+};
+
+// Send email to verify email account //
+window.verifyAccountWithEmail = () => {
   let user = firebase.auth().currentUser;
 
   user.sendEmailVerification().then(() => {
@@ -52,21 +73,19 @@ window.verifyMail = () => {
   });
 };
 
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    let usuarioAct = user.email;
-    console.log(usuarioAct);
-  } else {
-    console.log('No hay usuario activo');
-  }
-});
-
-btnLogOut.addEventListener('click', logOut());
-window.logOut = () => {
-  firebase.auth().signOut();
-  window.location.href = '../views/login.html';
-});
-};
+// firebase.auth().onAuthStateChanged((user) => {
+//   if (user) {
+//     let usuarioAct = user.email;
+//     console.log(usuarioAct);
+//   } else {
+//     console.log('No hay usuario activo');
+//   }
+// });
+// btnLogOut.addEventListener('click', logOut());
+// window.logOut = () => {
+//   firebase.auth().signOut();
+//   window.location.href = '../views/login.html';
+// };
 
 // correos emailjs
 
@@ -81,4 +100,5 @@ var service_id = "default_service";
 var template_id = "users_visitapp";
 emailjs.send(service_id,template_id,template_params);
 };
+
 

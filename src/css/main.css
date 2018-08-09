@@ -1,0 +1,14 @@
+body,
+html,
+.container {
+    height: 100vh;
+}
+
+.welcome-tittle {
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+
+.btn {
+    margin: auto;
+}
