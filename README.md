@@ -6,7 +6,9 @@ El registro de visitantes en una empresa en América Latina llega a ser un proce
 
 ## **VisitApp (Solución - Registro de Visitantes)**
 
-**VisitApp** es una web app, desarrollada principalmente para espacios de coworking que quieran cambiar y hacer más eficiente su proceso de registro de visitantes, brindando una experiencia de visita más rápida y cómoda; así como dando solución a la generación de reportes de las visitas y los visitantes.
+**VisitApp** 
+
+es una web app, desarrollada principalmente para espacios de coworking que quieran cambiar y hacer más eficiente su proceso de registro de visitantes, brindando una experiencia de visita más rápida y cómoda; así como dando solución a la generación de reportes de las visitas y los visitantes.
 
 Nuestra propuesta integra los siguientes elementos:
 
@@ -43,7 +45,8 @@ Generar un cambio en la experiencia de reconocimiento y registro de visitantes e
 ## Historias de usuario (Features)
 
   **Usuario Visitante**
-_El visitante será cualquier persona que esté interesado en ingresar al lugar en cuestión (coworking), que cuente con un motivo y una persona a la que visité.
+
+  _El visitante será cualquier persona que esté interesado en ingresar al lugar en cuestión (coworking), que cuente con un motivo y una persona a la que visité.
 
 -   Yo como visitante quisiera poder ingresar a través de una URL - GitHub Pages
     
@@ -125,4 +128,4 @@ De acuerdo a nuestra investigación, desarrollamos un prototipo que fue bosqueja
 
 **Alta Fidelidad**
 
-(https://marvelapp.com/4217e24/screen/46635193)
+(https://marvelapp.com/4217e24/screen/46627782)
