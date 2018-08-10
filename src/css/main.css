@@ -2,13 +2,26 @@ body,
 html,
 .container {
     height: 100vh;
+    font-family: 'Electrolize', sans-serif;
+}
+
+img {
+    width: 6em;
+    height: auto;
+    display: inline-block;
 }
 
 .welcome-tittle {
-    margin-top: 4em;
+    margin-top: 3em;
     margin-bottom: 2em;
 }
 
 .btn {
+    margin-top: 5em;
+}
+
+.logo {
+    width: 50%;
+    height: 10em;
     margin: auto;
 }
