@@ -125,4 +125,4 @@ De acuerdo a nuestra investigación, desarrollamos un prototipo que fue bosqueja
 
 **Alta Fidelidad**
 
-(https://dashboard.emailjs.com/templates/gLWocvgUzH)
+(https://marvelapp.com/4217e24/screen/46635193)
