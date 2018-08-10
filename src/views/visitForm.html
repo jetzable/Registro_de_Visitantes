@@ -1,12 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>VisitApp Registra tu Visita</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Adding Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <!-- Adding fontawesome to use icons-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <!-- Adding Font -->
+  <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <title>VisitApp Registra tu Visita</title>
 </head>
+
 <body>
-    
+  <div class="container">
+    <div class="row">
+      <form class="form-horizontal form-control">
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend>Registra tu Visita</legend>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Nombre">Nombre</label>
+            <div class="col-md-4">
+              <input id="Nombre" name="Nombre" type="text" placeholder="Nombre" class="form-control input-md" required="">
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Apellido">Apellido</label>
+            <div class="col-md-4">
+              <input id="Apellido" name="Apellido" type="text" placeholder="Apellido" class="form-control input-md" required="">
+
+            </div>
+          </div>
+
+          <!-- Textarea -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textarea">Text Area</label>
+            <div class="col-md-4">
+              <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Fecha">Fecha</label>
+            <div class="col-md-4">
+              <input id="Fecha" name="Fecha" type="text" placeholder="Fecha" class="form-control input-md" required="">
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Email">Email</label>
+            <div class="col-md-4">
+              <input id="Email" name="Email" type="text" placeholder="Email" class="form-control input-md" required="">
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Fecha">Fecha de tu Visita</label>
+            <div class="col-md-4">
+              <input id="Fecha" name="Fecha" type="text" placeholder="Fecha" class="form-control input-md" required="">
+
+            </div>
+          </div>
+
+          <!-- Select Basic -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Anfitrión">Anfitrión</label>
+            <div class="col-md-4">
+              <select id="Anfitrión" name="Anfitrión" class="form-control">
+                <option value="1">Pau</option>
+                <option value="2">John Parra</option>
+                <option value="3">Amalia Hernández</option>
+                <option value="4">Mike Nieva</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Textarea -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Motivo">Motivo</label>
+            <div class="col-md-4">
+              <textarea class="form-control" id="Motivo" name="Motivo">Describe tu visita</textarea>
+            </div>
+          </div>
+
+          <!-- Button -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="Boton"></label>
+            <div class="col-md-4">
+              <button id="Boton" name="Boton" class="btn btn-primary">Registro</button>
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
 </body>
+
 </html>
