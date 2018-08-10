@@ -30,33 +30,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="Nombre">Nombre</label>
             <div class="col-md-4">
-              <input id="Nombre" name="Nombre" type="text" placeholder="Nombre" class="form-control input-md" required="">
-
-            </div>
-          </div>
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Apellido">Apellido</label>
-            <div class="col-md-4">
-              <input id="Apellido" name="Apellido" type="text" placeholder="Apellido" class="form-control input-md" required="">
-
-            </div>
-          </div>
-
-          <!-- Textarea -->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="textarea">Text Area</label>
-            <div class="col-md-4">
-              <textarea class="form-control" id="textarea" name="textarea">default text</textarea>
-            </div>
-          </div>
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Fecha">Fecha</label>
-            <div class="col-md-4">
-              <input id="Fecha" name="Fecha" type="text" placeholder="Fecha" class="form-control input-md" required="">
+              <input id="visitorName" name="Nombre" type="text" placeholder="Nombre" class="form-control input-md" required="">
 
             </div>
           </div>
@@ -65,7 +39,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="Email">Email</label>
             <div class="col-md-4">
-              <input id="Email" name="Email" type="text" placeholder="Email" class="form-control input-md" required="">
+              <input id="visitorEmail" name="Email" type="text" placeholder="Email" class="form-control input-md" required="">
 
             </div>
           </div>
@@ -74,7 +48,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="Fecha">Fecha de tu Visita</label>
             <div class="col-md-4">
-              <input id="Fecha" name="Fecha" type="text" placeholder="Fecha" class="form-control input-md" required="">
+              <input id="visitDate" name="Fecha" type="date" placeholder="Fecha" class="form-control input-md" required="">
 
             </div>
           </div>
@@ -83,7 +57,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="Anfitrión">Anfitrión</label>
             <div class="col-md-4">
-              <select id="Anfitrión" name="Anfitrión" class="form-control">
+              <select id="hostName" name="Anfitrión" class="form-control">
                 <option value="1">Pau</option>
                 <option value="2">John Parra</option>
                 <option value="3">Amalia Hernández</option>
@@ -92,19 +66,11 @@
             </div>
           </div>
 
-          <!-- Textarea -->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Motivo">Motivo</label>
-            <div class="col-md-4">
-              <textarea class="form-control" id="Motivo" name="Motivo">Describe tu visita</textarea>
-            </div>
-          </div>
-
           <!-- Button -->
           <div class="form-group">
             <label class="col-md-4 control-label" for="Boton"></label>
             <div class="col-md-4">
-              <button id="Boton" name="Boton" class="btn btn-primary">Registro</button>
+              <button id="visitRegister" name="Boton" class="btn btn-primary">Registrar mi Visita</button>
             </div>
           </div>
 
@@ -112,7 +78,8 @@
       </form>
     </div>
   </div>
-
+  <script src="../js/init.js"></script>
+  <script src="../js/visitForm.js"></script>
 </body>
 
 </html>
