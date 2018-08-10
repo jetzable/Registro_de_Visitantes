@@ -117,3 +117,12 @@ Lo cual nos indica que los visitantes quieren ser una parte activa de este proce
   
 
 ![Gráfico de respuestas de formularios. Título de la pregunta: Si tuvieras la oportunidad de registrar tu visita a uno de estos lugares (antes de tu llegada), ¿lo harías?. Número de respuestas: 7 respuestas.](https://lh6.googleusercontent.com/FLAqUhTXoceuoMx8EAwZR0QSWwIHPPPUJwLtcOih8e2iUFZ66k2lVTAwqjjRdw5QK72BX4LRObxVKH9soBS8T7Q6k69ji1hslEKj0CMW-Dkpg7z01QlBNokkTF9UsaBbXZCDVlsi)
+
+
+## Prototipo
+
+De acuerdo a nuestra investigación, desarrollamos un prototipo que fue bosquejado en baja y alta fidelidad, para después poder probarlo con usuarios reales.
+
+**Alta Fidelidad**
+
+(https://dashboard.emailjs.com/templates/gLWocvgUzH)
