@@ -8,9 +8,6 @@ window.initializeFirebase = () => {
     storageBucket: 'visitapp-700e9.appspot.com',
     messagingSenderId: '443650975761'
   });
-  let db = firebase.firestore();
-  let dbSettings = { timestampsInSnapshots: true };
-  db.settings(dbSettings);
 };
 
 // New Admin
@@ -73,28 +70,20 @@ window.verifyAccountWithEmail = () => {
   });
 };
 
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (user) {
-//     let usuarioAct = user.email;
-//     console.log(usuarioAct);
-//   } else {
-//     console.log('No hay usuario activo');
-//   }
-// });
-// btnLogOut.addEventListener('click', logOut());
-// window.logOut = () => {
-//   firebase.auth().signOut();
-//   window.location.href = '../views/login.html';
-// };
-window.sendNotification = () => {
-  var template_params = {
-    'from_name': 'from_name_value',
-    'from_email': 'from_email_value',
-    'subject': 'subject_value',
-    'message': 'message_value'
-  };
 
-  var service_id = 'default_service';
-  var template_id = 'users_visitapp';
-  emailjs.send(service_id, template_id, template_params);
+window.addingRegister = (visitorName, email, date, company, host) => {
+  db.collection('visitors').add({
+    name: visitorName,
+    email: email,
+    date: date,
+    company: company,
+    hostName: host
+  })
+    .then((docRef) => {
+      console.log('Document written with ID: ', docRef.id);
+      popId(docRef.id);
+    })
+    .catch((error) => {
+      console.error('Error adding document: ', error);
+    });
 };
