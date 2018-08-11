@@ -42,7 +42,7 @@ window.adminLogIn = () => {
   const password = document.getElementById('password').value;
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
-      console.log('se inicio sesión');
+      location.href = ('dashboard.html');
     })
     .catch((error) => {
       // Handle Errors here.
@@ -85,5 +85,14 @@ window.addingRegister = (visitorName, email, date, company, host) => {
     })
     .catch((error) => {
       console.error('Error adding document: ', error);
+    });
+};
+
+window.signOutUser = () => {
+  firebase.auth().signOut()
+    .then(() => {
+      console.log('Sesión Cerrada');
+    }).catch((error) => {
+      console.log(error);
     });
 };
