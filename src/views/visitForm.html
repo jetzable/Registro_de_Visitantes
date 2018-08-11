@@ -13,72 +13,49 @@
     crossorigin="anonymous">
   <!-- Adding Font -->
   <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
+  <!-- Addign SweetAlert for alerts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
   <link rel="stylesheet" href="../css/main.css">
   <title>VisitApp Registra tu Visita</title>
 </head>
 
 <body>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <form class="form-horizontal form-control">
-        <fieldset>
-
-          <!-- Form Name -->
-          <legend>Registra tu Visita</legend>
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Nombre">Nombre</label>
-            <div class="col-md-4">
-              <input id="visitorName" name="Nombre" type="text" placeholder="Nombre" class="form-control input-md" required="">
-
-            </div>
+      <div class="col-md-12 align-form">
+        <form class="form-horizontal form-group">
+          <label class="col-md-4 control-label" for="visitorName"></label>
+          <div class="col-md-4">
+            <input id="visitorName" name="visitorName" type="text" placeholder="Escribe Tu Nombre" class="form-control input-md" required="">
           </div>
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Email">Email</label>
-            <div class="col-md-4">
-              <input id="visitorEmail" name="Email" type="text" placeholder="Email" class="form-control input-md" required="">
-
-            </div>
+          <label class="col-md-4 control-label" for="visitorEmail"></label>
+          <div class="col-md-4">
+            <input id="visitorEmail" name="visitorEmail" type="text" placeholder="Escribe tu email" class="form-control input-md" required="">
           </div>
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Fecha">Fecha de tu Visita</label>
-            <div class="col-md-4">
-              <input id="visitDate" name="Fecha" type="date" placeholder="Fecha" class="form-control input-md" required="">
-
-            </div>
+          <label class="col-md-4 control-label" for="visitDate"></label>
+          <div class="col-md-4">
+            <input id="visitDate" name="visitDate" type="date" placeholder="¿Cuándo nos visitarás?" class="form-control input-md" required="">
           </div>
-
-          <!-- Select Basic -->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Anfitrión">Anfitrión</label>
-            <div class="col-md-4">
-              <select id="hostName" name="Anfitrión" class="form-control">
-                <option value="1">Pau</option>
-                <option value="2">John Parra</option>
-                <option value="3">Amalia Hernández</option>
-                <option value="4">Mike Nieva</option>
-              </select>
-            </div>
+          <label class="col-md-4 control-label" for="companyName"></label>
+          <div class="col-md-4">
+            <select id="companyName" name="companyName" class="form-control" aria-placeholder="Empresa">
+            </select>
           </div>
-
-          <!-- Button -->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Boton"></label>
-            <div class="col-md-4">
-              <button id="visitRegister" name="Boton" class="btn btn-primary">Registrar mi Visita</button>
-            </div>
+          <label class="col-md-4 control-label" for="hostName"></label>
+          <div class="col-md-4">
+            <select id="hostName" name="hostName" class="form-control" aria-placeholder="Anfitrión">
+            </select>
           </div>
-
-        </fieldset>
-      </form>
+          <label class="col-md-4 control-label" for="visitRegister"></label>
+          <div class="col-md-4">
+            <button id="visitRegister" name="visitRegister" class="btn btn-primary">Registrar Visita</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
   <script src="../js/init.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
   <script src="../js/visitForm.js"></script>
 </body>
 

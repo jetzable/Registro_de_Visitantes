@@ -25,3 +25,7 @@ img {
     height: 10em;
     margin: auto;
 }
+
+.align-form{
+    text-align: -webkit-center;
+}
