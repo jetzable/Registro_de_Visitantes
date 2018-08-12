@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -11,8 +11,12 @@
   <!-- Adding fontawesome to use icons-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
+  <!-- Adding Font -->
+  <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
+  <!-- Addign SweetAlert for alerts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
   <link rel="stylesheet" href="../css/main.css">
-  <title>VisitApp Check-In</title>
+  <title>VisitApp Registra tu Visita</title>
 </head>
 
 <body>
@@ -27,19 +31,20 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" id="visitsToday" href="dashboard.html">Visitas del Día</a>
-            </li>
             <li class="nav-item active">
+              <a class="nav-link" id="visitsToday" href="dashboard.html">Visitas del Día
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" id="checkIn" href="checkIn.html">Check-In</a>
-              <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item active">
               <a class="nav-link" id="registerForm" href="newVisit.html">Registro de Visitante</a>
               <span class="sr-only"></span>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="reportsGenerator" href="reports.html">Generar reporte</a>
+              <a class="nav-link" id="reportsGenerator">Generar reporte</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="logOutBtn">Cerrar Sesión</a>
@@ -53,36 +58,44 @@
       </nav>
     </div>
   </header>
+
   <div class="container-fluid">
     <div class="row">
-      <div class="result col-md-12">
-        <form id="content" class="visit-form">
-          <h1>Registra un Visitante: </h1>
-          <div class="form-group">
-            <label for="visitCheckIn">ID de Registro: </label>
-            <input type="text" name="id" id="idCheckIn">
+      <div class="col-md-12 align-form">
+        <form class="form-horizontal form-group">
+          <label class="col-md-4 control-label" for="visitorName"></label>
+          <div class="col-md-4">
+            <input id="visitorName" name="visitorName" type="text" placeholder="Nombre del Visitante" class="form-control input-md" required="">
           </div>
-          <button class="btn btn-outline" id="validateChechIn">Check-In</button>
+          <label class="col-md-4 control-label" for="visitorEmail"></label>
+          <div class="col-md-4">
+            <input id="visitorEmail" name="visitorEmail" type="text" placeholder="Email del Visitante" class="form-control input-md" required="">
+          </div>
+          <label class="col-md-4 control-label" for="visitDate"></label>
+          <div class="col-md-4">
+            <input id="visitDate" name="visitDate" type="date" class="form-control input-md" required="">
+          </div>
+          <label class="col-md-4 control-label" for="companyName"></label>
+          <div class="col-md-4">
+            <select id="companyName" name="companyName" class="form-control" aria-placeholder="Empresa que visita">
+            </select>
+          </div>
+          <label class="col-md-4 control-label" for="hostName"></label>
+          <div class="col-md-4">
+            <select id="hostName" name="hostName" class="form-control" aria-placeholder="Anfitrión">
+            </select>
+          </div>
+          <label class="col-md-4 control-label" for="visitRegister"></label>
+          <div class="col-md-4">
+            <button id="visitRegister" name="visitRegister" class="btn btn-primary">Registrar Visita</button>
+          </div>
         </form>
       </div>
     </div>
   </div>
-  </div>
-
-  <!-- Adding Bootstrap scripts -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-  <!-- Adding Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-
-  <!-- Addign SweetAlert for alerts -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
   <script src="../js/init.js"></script>
-  <script src="../js/checkIn.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script src="../js/newVisit.js"></script>
 </body>
 
 </html>
