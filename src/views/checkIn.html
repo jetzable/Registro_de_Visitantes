@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
   <link rel="stylesheet" href="../css/main.css">
-  <title>VisitApp Admin Dashboard</title>
+  <title>VisitApp Check-In</title>
 </head>
 
 <body>
@@ -27,16 +27,15 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item active">
-                  <a class="nav-link" id="visitsToday" href="dashboard.html">Visitas del Día
-                    <span class="sr-only">(current)</span>
-                  </a>
-                </li>
             <li class="nav-item">
+              <a class="nav-link" id="visitsToday" href="dashboard.html">Visitas del Día</a>
+            </li>
+            <li class="nav-item active">
               <a class="nav-link" id="checkIn" href="checkIn.html">Registro de Visitante</a>
+              <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="reportsGenerator">Generar reporte</a>
+              <a class="nav-link" id="reportsGenerator" href="reports.html">Generar reporte</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="logOutBtn">Cerrar Sesión</a>
@@ -53,22 +52,17 @@
   <div class="container-fluid">
     <div class="row">
       <div class="result col-md-12">
-        <table class="table table-hover responsive text-center">
-          <thead id="tableHeader" class="thead-dark">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Visitante</th>
-              <th scope="col">Empresa</th>
-              <th scope="col">Anfitrion</th>
-              <th scope="col">Fecha de Visita</th>
-            </tr>
-          </thead>
-          <tbody id="tableData">
-
-          </tbody>
-        </table>
+          <form>
+              <h1>Registra un Visitante: </h1>
+              <div class="form-group">
+                <label for="visitCheckIn">ID de Registro: </label>
+                <input type="text" name="id" id="idCheckIn">
+              </div>
+                <button class="btn btn-outline">Check-In</button>
+            </form>
       </div>
     </div>
+  </div>
   </div>
 
   <!-- Adding Bootstrap scripts -->
@@ -84,9 +78,7 @@
   <!-- Addign SweetAlert for alerts -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
   <script src="../js/init.js"></script>
-  <script src="../js/dashboard.js"></script>
-
-
+  <script src="../js/checkIn.js"></script>
 </body>
 
 </html>

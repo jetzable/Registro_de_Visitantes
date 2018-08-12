@@ -8,6 +8,7 @@ getListOfVisitors();
 const drawListOfVisitors = (list) => {
   let segment = document.getElementById('tableData');
   let fragment = document.createDocumentFragment();
+  segment.innerHTML = '';
   list.forEach(element => {
     let i = 1;
     let tr = document.createElement('tr');
@@ -29,7 +30,3 @@ document.getElementById('logOutBtn').addEventListener('click', event => {
   location.href = ('login.html');
 });
 
-document.getElementById('visitsToday').addEventListener('click', event => {
-  event.preventDefault();
-  getListOfVisitors();
-});

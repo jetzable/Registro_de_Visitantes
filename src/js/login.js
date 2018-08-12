@@ -5,5 +5,7 @@ db.settings(dbSettings);
 
 document.getElementById('adminLogin').addEventListener('click', event => {
   event.preventDefault();
-  adminLogIn();
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  adminLogIn(email, password);
 });
