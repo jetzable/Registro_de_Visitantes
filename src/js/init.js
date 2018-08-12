@@ -73,7 +73,8 @@ window.addingRegister = (visitorName, email, date, company, host) => {
     email: email,
     date: date,
     company: company,
-    hostName: host
+    hostName: host,
+    status: 'pending'
   })
     .then((docRef) => {
       console.log('Document written with ID: ', docRef.id);
@@ -134,6 +135,11 @@ window.getListOfVisitors = () => {
 window.searchId = (id) => {
   db.collection('visitors').doc(id).get()
     .then(visitor => {
-      console.log(visitor);
+      let visitorInfo = visitor.data();
+      db.collection('visitors').doc(id).update({status: 'arrived'});
+      drawValidatingResults(visitorInfo);
+    })
+    .catch(error => {
+      console.log(error);
     });
 };

@@ -66,6 +66,11 @@ document.getElementById('visitRegister').addEventListener('click', event => {
   let companyName = document.querySelector('#companyName').value;
   let hostName = document.querySelector('#hostName').value;
   addingRegister(visitorName, visitorEmail, visitDate, companyName, hostName);
+  document.getElementById('visitorName').value = '';
+  document.getElementById('visitorEmail').value = '';
+  document.getElementById('visitDate').value = '';
+  document.querySelector('#companyName').value = '';
+  document.querySelector('#hostName').value = '';
 });
 
 const popId = (id) => {
