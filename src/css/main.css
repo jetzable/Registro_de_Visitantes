@@ -15,7 +15,7 @@ table {
     width: -webkit-fill-available;
 }
 
-form{
+.visit-form {
     margin-top: 5em;
     margin-bottom: 2em;
     margin-left: auto;
