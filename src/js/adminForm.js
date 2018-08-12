@@ -1,5 +1,9 @@
-const btnSignUpModal = document.getElementById('btnSignUpModal');
-const btnLogIn = document.getElementById('btnentrar');
+initializeFirebase();
+let db = firebase.firestore();
+let dbSettings = { timestampsInSnapshots: true };
+db.settings(dbSettings);
 
-btnSignUpModal.addEventListener('click', newAdminForm());
-btnentrar.addEventListener('click', adminLogIn());
+document.getElementById('newAdmin').addEventListener('click', event => {
+  event.preventDefault();
+  newAdminForm();
+});

@@ -42,7 +42,7 @@ window.adminLogIn = () => {
   const password = document.getElementById('password').value;
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
-      console.log('se inicio sesión');
+      location.href = ('dashboard.html');
     })
     .catch((error) => {
       // Handle Errors here.
@@ -85,5 +85,52 @@ window.addingRegister = (visitorName, email, date, company, host) => {
     })
     .catch((error) => {
       console.error('Error adding document: ', error);
+    });
+};
+
+window.signOutUser = () => {
+  firebase.auth().signOut()
+    .then(() => {
+      // Sign out user.
+    }).catch((error) => {
+      console.log(error);
+    });
+};
+
+
+// Reset password //
+window.passwordReset = (userEmail) => {
+  let auth = firebase.auth();
+
+  auth.sendPasswordResetEmail(userEmail)
+    .then(() => {
+      // Email sent.
+      alert('Se ha enviado un mail a tu correo para poder recuperar tu contraseña.');
+      // location.href = ('../index.html');
+    }).catch((error) => {
+      // An error happened.
+      console.log(error);
+    });
+};
+
+
+window.getListOfVisitors = () => {
+  let todayDate = new Date();
+  let today = todayDate.getDate();
+  let currentMonth = todayDate.getMonth() + 1;
+  if (currentMonth < 10) {
+    currentMonth = '0' + currentMonth;
+  };
+  let currentYear = todayDate.getFullYear();
+  let fullDate = `${currentYear}` + '-' + `${currentMonth}` + '-' + `${today}`;
+  let listOfVisits = [];
+  db.collection('visitors').get()
+    .then(reference => {
+      reference.forEach(visitor => {
+        if (visitor.data().date === fullDate) {
+          listOfVisits.push(visitor.data());
+        }
+      });
+      drawListOfVisitors(listOfVisits);
     });
 };

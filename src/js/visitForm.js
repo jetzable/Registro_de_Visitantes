@@ -73,5 +73,6 @@ const popId = (id) => {
     type: 'success',
     title: '¡Excelente!',
     text: 'Presenta el siguiente número de registro cuando nos visites: ' + `${id}`,
+    showCloseButton: true,
   });
 };
