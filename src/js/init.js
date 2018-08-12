@@ -11,9 +11,7 @@ window.initializeFirebase = () => {
 };
 
 // New Admin
-window.newAdminForm = () => {
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
+window.newAdminForm = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(() => {
       verifyAccountWithEmail();
@@ -37,9 +35,7 @@ window.newAdminForm = () => {
 };
 
 // Admin Login
-window.adminLogIn = () => {
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
+window.adminLogIn = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
       location.href = ('dashboard.html');
@@ -132,5 +128,12 @@ window.getListOfVisitors = () => {
         }
       });
       drawListOfVisitors(listOfVisits);
+    });
+};
+
+window.searchId = (id) => {
+  db.collection('visitors').doc(id).get()
+    .then(visitor => {
+      console.log(visitor);
     });
 };

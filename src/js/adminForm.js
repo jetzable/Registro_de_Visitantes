@@ -5,5 +5,7 @@ db.settings(dbSettings);
 
 document.getElementById('newAdmin').addEventListener('click', event => {
   event.preventDefault();
-  newAdminForm();
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  newAdminForm(email, password);
 });
