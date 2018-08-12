@@ -52,8 +52,21 @@
   </header>
   <div class="container-fluid">
     <div class="row">
-      <div class="result">
-        
+      <div id="page" class="result col-md-12">
+        <table class="table table-hover responsive text-center">
+          <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Visitante</th>
+                <th scope="col">Empresa</th>
+                <th scope="col">Anfitrion</th>
+                <th scope="col">Fecha de Visita</th>
+            </tr>
+          </thead>
+          <tbody id="tableData">
+            
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -70,9 +83,9 @@
 
   <!-- Addign SweetAlert for alerts -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-
   <script src="../js/init.js"></script>
   <script src="../js/dashboard.js"></script>
+  
 
 </body>
 

@@ -11,6 +11,10 @@ img {
     display: inline-block;
 }
 
+table {
+    width: -webkit-fill-available;
+}
+
 .welcome-tittle {
     margin-top: 3em;
     margin-bottom: 2em;
@@ -28,4 +32,9 @@ img {
 
 .align-form{
     text-align: -webkit-center;
+}
+
+.result {
+    padding: 0%;
+    margin: 0%;
 }
