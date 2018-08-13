@@ -4,6 +4,16 @@ let db = firebase.firestore();
 let dbSettings = { timestampsInSnapshots: true };
 db.settings(dbSettings);
 
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in.
+    let displayName = user.displayName;
+    let email = user.email;
+  } else {
+    location.href = ('../index.html');
+  }
+});
+
 const drawValidatingResults = (matchResult) => {
   document.getElementById('content').innerHTML = `
   <div class="form">
@@ -11,9 +21,9 @@ const drawValidatingResults = (matchResult) => {
               <img class="card-img-top" src="img_avatar1.png" alt="Card image">
               <div class="card-body">
                 <h4 class="card-title">${matchResult.name}</h4>
-                <h5 class="card-text">${matchResult.hostName}</h5>
+                <h5 id="hostName" class="card-text">${matchResult.hostName}</h5>
                 <h5 class="card-text">${matchResult.date}</h5>
-                <button id="checkInNotification" class="btn btn-primary">Notificar</button>
+                <button class="btn btn-primary">Confirmar</button>
               </div>
             </div>
           </div>`;

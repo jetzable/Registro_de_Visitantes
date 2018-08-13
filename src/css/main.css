@@ -46,3 +46,7 @@ table {
     padding: 0%;
     margin: 0%;
 }
+
+#searchResult {
+    display: none;
+}

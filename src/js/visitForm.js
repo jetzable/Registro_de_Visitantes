@@ -81,3 +81,10 @@ const popId = (id) => {
     showCloseButton: true,
   });
 };
+
+document.getElementById('logOutBtn').addEventListener('click', event => {
+  event.preventDefault();
+  signOutUser();
+  swal('La sesión se cerró correctamente');
+  location.href = ('login.html');
+});

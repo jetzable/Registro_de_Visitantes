@@ -5,6 +5,16 @@ let dbSettings = { timestampsInSnapshots: true };
 db.settings(dbSettings);
 getListOfVisitors();
 
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in.
+    let displayName = user.displayName;
+    let email = user.email;
+  } else {
+    location.href = ('../index.html');
+  }
+});
+
 const drawListOfVisitors = (list) => {
   let segment = document.getElementById('tableData');
   let fragment = document.createDocumentFragment();
