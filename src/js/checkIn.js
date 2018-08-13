@@ -43,10 +43,3 @@ document.getElementById('logOutBtn').addEventListener('click', event => {
   swal('La sesión se cerró correctamente');
   location.href = ('login.html');
 });
-
-// document.getElementById('validateVisitor').addEventListener('click', event => {
-//   event.preventDefault();
-//   let host = document.getElementById('hostName').value;
-//   console.log(host);
-//   sendNotification(host);
-// });

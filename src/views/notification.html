@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <link rel="stylesheet" href="../css/notification.css">
+  <body>
+    <form id="myform" method="post">
+  <label>to_email</label>
+  <input type="text" name="to_email" />
+  <br><br>
+  <button>
+  Send
+  </button>
+  </form>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+     (function(){
+        emailjs.init("user_QLZGa5y016AM22q4VSQCS");
+     })();
+  </script>
+  </body>
+  <script src="../js/notification.js"></script>
+</html>
