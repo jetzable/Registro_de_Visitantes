@@ -3,6 +3,16 @@ let db = firebase.firestore();
 let dbSettings = { timestampsInSnapshots: true };
 db.settings(dbSettings);
 
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in.
+    let displayName = user.displayName;
+    let email = user.email;
+  } else {
+    location.href = ('../index.html');
+  }
+});
+
 // Get companies available to select in visitForm
 const createCompanySelect = (companies) => {
   // Options lists
@@ -77,7 +87,14 @@ const popId = (id) => {
   swal({
     type: 'success',
     title: '¡Excelente!',
-    text: 'Presenta el siguiente número de registro cuando nos visites: ' + `${id}`,
+    text: 'El id de la visita es: ' + `${id}`,
     showCloseButton: true,
   });
 };
+
+document.getElementById('logOutBtn').addEventListener('click', event => {
+  event.preventDefault();
+  signOutUser();
+  swal('La sesión se cerró correctamente');
+  location.href = ('login.html');
+});

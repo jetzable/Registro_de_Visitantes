@@ -3,4 +3,6 @@ DS_Store
 *.swp
 .nyc_output/
 coverage/
-node_module/
+node_module
+package-lock.json
+package.json

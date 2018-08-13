@@ -136,10 +136,95 @@ window.searchId = (id) => {
   db.collection('visitors').doc(id).get()
     .then(visitor => {
       let visitorInfo = visitor.data();
-      db.collection('visitors').doc(id).update({status: 'arrived'});
+      db.collection('visitors').doc(id).update({ status: 'arrived' });
       drawValidatingResults(visitorInfo);
     })
     .catch(error => {
       console.log(error);
     });
+};
+
+
+window.generateReport = (option, search) => {
+  let matchArray = [];
+  if (option === 'visitorName') {
+    let searchNameValue = search.toUpperCase();
+    db.collection('visitors').get()
+      .then(list => {
+        list.forEach(element => {
+          let visitorName = element.data().name;
+          let nameField = visitorName.toUpperCase();
+          let searchMatch = nameField.indexOf(searchNameValue);
+          if (searchMatch !== -1) {
+            matchArray.push(element.data());
+          }
+        });
+        drawSearchResults(matchArray);
+      });
+  } else if (option === 'idVisit') {
+    db.collection('visitors').doc(search).get()
+      .then(element => {
+        matchArray.push(element.data());
+      });
+  } else if (option === 'hostName') {
+    let searchVisitorValue = search.toUpperCase();
+    db.collection('visitors').get()
+      .then(list => {
+        list.forEach(element => {
+          let hostName = element.data().hostName;
+          let hostField = hostName.toUpperCase();
+          let searchMatch = hostField.indexOf(searchVisitorValue);
+          if (searchMatch !== -1) {
+            matchArray.push(element.data());
+          }
+        });
+        drawSearchResults(matchArray);
+      });
+  } else if (option === 'company') {
+    let searchCompanyValue = search.toUpperCase();
+    db.collection('visitors').get()
+      .then(list => {
+        list.forEach(element => {
+          let company = element.data().company;
+          let companyField = company.toUpperCase();
+          let searchMatch = companyField.indexOf(searchCompanyValue);
+          if (searchMatch !== -1) {
+            matchArray.push(element.data());
+          }
+        });
+        drawSearchResults(matchArray);
+      });
+  } else if (option === 'status') {
+    if (search === 'checkin') {
+      db.collection('visitors').get()
+        .then(list => {
+          list.forEach(element => {
+            if (element.data().status === 'arrived') {
+              matchArray.push(element.data());
+            }
+          });
+          drawSearchResults(matchArray);
+        });
+    } else {
+      db.collection('visitors').get()
+        .then(list => {
+          list.forEach(element => {
+            if (element.data().status === 'pending') {
+              matchArray.push(element.data());
+            }
+          });
+          drawSearchResults(matchArray);
+        });
+    }
+  } else if (option === 'date') {
+    db.collection('visitors').get()
+      .then(list => {
+        list.forEach(element => {
+          if (element.data().date === search) {
+            matchArray.push(element.data());
+          }
+        });
+        drawSearchResults(matchArray);
+      });
+  }
 };
