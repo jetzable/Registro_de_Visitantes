@@ -23,7 +23,7 @@ const drawValidatingResults = (matchResult) => {
                 <h4 class="card-title">${matchResult.name}</h4>
                 <h5 id="hostName" class="card-text">${matchResult.hostName}</h5>
                 <h5 class="card-text">${matchResult.date}</h5>
-                <button class="btn btn-primary">Confirmar</button>
+                <button class="btn btn-primary" href="notification.html">Confirmar</button>
               </div>
             </div>
           </div>`;
