@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test prueba</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/4.1.0/mocha.min.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/4.1.0/mocha.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.1.2/chai.min.js"></script>
+    <!--script src="../src/js/adminForm.js"></script>
+    <script src="../src/js/checkln.js"></script>
+    <script src="../src/js/dashboard.js"></script>
+    <script src="../src/js/filldb.js"></script-->
+    <script src="../src/js/init.js"></script>
+    <!--script src="../src/js/login.js"></script>
+    <script src="../src/js/newVisit.js"></script>
+    <script src="../src/js/notification.js"></script>
+    <script src="../src/js/reportGenerator.js"></script>
+    <script src="../src/js/takeAPicture.js"></script>
+    <script src="../src/js/visitForm.js"></script-->
+    <script src="../test/headless.js"></script>
+    <script>
+      const { assert } = chai;
+      mocha.setup('bdd');
+    </script>
+    <script src="../test/expect.js"></script>
+    <script>
+      mocha.checkLeaks();
+      mocha.run();
+    </script>
+  </body>
+</html>
