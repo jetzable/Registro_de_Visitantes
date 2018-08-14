@@ -12,30 +12,31 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
     <!-- Adding Font -->
-    <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <title>VisitApp Welcome</title>
 </head>
 
 <body>
-    <header class="logo">
-        <div class="logo col-md-12 text-center">
-            <img src="images/logo.png" alt="Logo">
-            <p>VisitApp</p>
-        </div>
-    </header>
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center welcome-tittle">
-                <div class="display-3"> Ingresa Como: </div>
-            </div>
-            <div class="col-12 col-md-6 text-center">
-                <a class="btn btn-primary" href="views/login.html">Administrador</a>
-            </div>
-            <div class="col-12 col-md-6 text-center">
-                <a class="btn btn-primary" href="views/visitForm.html">Visitante</a>
-            </div>
+        <header class="logo text-center">
+            <img class="logo col-md-12 text-center" src="images/logo.png" alt="Logo">
+        </header>
+        <div class="col-md-12 text-center welcome-tittle">
+            <h2>Ingresa como:</h2>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+            <a class="btn btn btn-warning btn-lg btn-block" href="views/visitForm.html">
+            <strong>Visitante </strong>
+            </a>
+        </div>
+        <div class="mt-4 mt-md-0 col-12 col-md-6 text-center">
+            <a class="btn btn-dark btn-lg btn-block" href="views/login.html">Admin</a>
+        </div>
         </div>
     </div>
 </body>
+
 </html>
