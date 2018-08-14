@@ -32,18 +32,17 @@
     
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                  <li class="nav-item active">
-                      <a class="nav-link" id="visitsToday" href="dashboard.html">Visitas del Día
-                        <span class="sr-only">(current)</span>
-                      </a>
-                    </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="checkIn" href="checkIn.html">Check-In</a>
+                  <a class="nav-link" id="visitsToday" href="dashboard.html">Visitas del Día</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" id="registerForm" href="newVisit.html">Registro de Visitante</a>
-                    <span class="sr-only"></span>
-                  </li>
+                  <a class="nav-link" id="checkIn" href="checkIn.html">Check-In</a>
+                  <span class="sr-only">(current)</span>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" id="registerForm" href="newVisit.html">Registro de Visitante</a>
+                  <span class="sr-only"></span>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" id="reportsGenerator" href="reports.html">Generar reporte</a>
                 </li>
@@ -62,60 +61,63 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 align-form">
-        <form class="form-horizontal form-group">
-            <div id="photoShot" class="app">
-
-                <a href="#" id="start-camera" class="visible">¡Tomale una foto al visitante!</a>
-                <video id="camera-stream"></video>
-                <img id="snap">
-        
-                <p id="error-message"></p>
-        
-                <div class="controls">
-                  <a href="#" id="delete-photo" title="Eliminar Foto" class="disabled">
-                    <i class="material-icons">delete</i>
-                  </a>
-                  <a href="#" id="take-photo" title="Tomar Foto">
-                    <i class="material-icons">camera_alt</i>
-                  </a>
-                  <a href="#" id="download-photo" download="foto.jpg" title="Descargar Foto" class="disabled">
-                    <i class="material-icons">file_download</i>
-                  </a>
-                </div>
-        
-                <canvas></canvas>
-        
-              </div>
-          <label class="col-md-4 control-label" for="visitorName"></label>
-          <div class="col-md-4">
-            <input id="visitorName" name="visitorName" type="text" placeholder="Escribe Tu Nombre" class="form-control input-md" required="">
+        <h1>¡Registra un nuevo Visitante!</h1>
+        <form class="form-horizontal form-group mt-4">          
+          <div class="mt-4 col-md-4 form-group">
+            <label class=" control-label" for="visitorName"><strong><i class="fas fa-user"></i> Nombre </strong></label>
+            <input id="visitorName" name="visitorName" type="text" placeholder="Nombre del Visitante" class="form-control input-md" required="">
+          </div> 
+          <div class=" mt-4 col-md-4 form-group">
+            <label class=" control-label" for="visitDate"> <strong><i class="far fa-calendar-check"></i> Fecha: </strong> </label>
+            <input id="visitDate" name="visitDate" type="date" placeholder="¿Qué día es hoy?" class="form-control input-md" required="">
           </div>
-          <label class="col-md-4 control-label" for="visitDate"></label>
-          <div class="col-md-4">
-            <input id="visitDate" name="visitDate" type="date" placeholder="¿Cuándo nos visitarás?" class="form-control input-md" required="">
-          </div>
-          <label class="col-md-4 control-label" for="companyName"></label>
-          <div class="col-md-4">
+          <div class="mt-4 col-md-4 form-group">
+            <label class=" control-label" for="companyName"> <strong><i class="fas fa-building"></i> Empresa que visita: </strong></label>
             <select id="companyName" name="companyName" class="form-control" aria-placeholder="Empresa">
             </select>
           </div>
-          <label class="col-md-4 control-label" for="hostName"></label>
-          <div class="col-md-4">
+          <div class="mt-4 col-md-4 form-group">
+            <label class=" control-label" for="hostName"><strong><i class="fas fa-user-tie"></i> ¿A quien visita?</strong></label>
             <select id="hostName" name="hostName" class="form-control" aria-placeholder="Anfitrión">
             </select>
           </div>
-          <label class="col-md-4 control-label" for="visitRegister"></label>
+          
+          <div id="snapShot" class="app">
+            <p><strong>Toma una foto del visitante para un registro más seguro <i class="fas fa-smile-wink"></i></strong></p>
+            <a href="#" id="start-camera" class="visible"></a>
+            <video id="camera-stream"></video>
+            <img id="snap">
+
+            <p id="error-message"></p>
+
+            <div class="controls">
+              <a href="#" id="delete-photo" title="Eliminar Foto" class="disabled">
+                <i class="material-icons">delete</i>
+              </a>
+              <a href="#" id="take-photo" title="Tomar Foto">
+                <i class="material-icons">camera_alt</i>
+              </a>
+              <a href="#" id="download-photo" download="foto.jpg" title="Descargar Foto" class="disabled">
+                <i class="material-icons">file_download</i>
+              </a>
+            </div>
+
+            <canvas></canvas>
+
+          </div>
+
           <div class="col-md-4">
-            <button id="visitRegister" name="visitRegister" class="btn btn-primary">Registrar Visita</button>
+            <button id="visitRegister" name="visitRegister" class="btn btn-dark btn-block">Finalizar Registro</button>
           </div>
         </form>
+
       </div>
     </div>
   </div>
   <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
   <script src="../js/init.js"></script>
   <script src="../js/takeAPicture.js"></script>
-  <script src="../js/visitForm.js"></script>
+  <script src="../js/newVisit.js"></script>
 </body>
 
 </html>

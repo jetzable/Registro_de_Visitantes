@@ -70,14 +70,14 @@ document.getElementById('visitRegister').addEventListener('click', event => {
   document.getElementById('visitDate').value = '';
   document.querySelector('#companyName').value = '';
   document.querySelector('#hostName').value = '';
-  document.getElementById('photoShot').innerHTML = '';
+  document.getElementById('snapShot').innerHTML = '';
 });
 
 const popId = (id) => {
   swal({
     type: 'success',
     title: '¡Excelente!',
-    text: 'Presenta el siguiente número de registro cuando nos visites: ' + `${id}`,
+    text: 'El número de registro es: ' + `${id}`,
     showCloseButton: true,
   });
 };
@@ -85,3 +85,15 @@ const popId = (id) => {
 const backToBegin = () => {
   location.href = ('../index.html');
 };
+
+document.getElementById('logOutBtn').addEventListener('click', event => {
+  event.preventDefault();
+  signOutUser();
+  swal({
+    type: 'success',
+    title: '¡Hasta Pronto!',
+    text: 'Tu sesión se cerró correctamente.',
+    showCloseButton: true,
+  });
+  location.href = ('../index.html');
+});

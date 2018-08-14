@@ -1,21 +1,32 @@
-let myform = $('form#myform');
-sendRegistrationNotification();
+initializeFirebase();
+let db = firebase.firestore();
+let dbSettings = { timestampsInSnapshots: true };
+db.settings(dbSettings);
+sendRegistrationNotification(); 
 
-myform.submit((event) => {
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in.
+    let displayName = user.displayName;
+    let email = user.email;
+  } else {
+    location.href = ('../index.html');
+  }
+});
+
+
+document.getElementById('notificationBtn').addEventListener('click', event => {
   event.preventDefault();
-
-  // Change to your service ID, or keep using the default service
-  let service_id = 'default_service';
-  let template_id = 'users_visitapp';
-
-  myform.find('button').text('Enviando...');
-  emailjs.sendForm(service_id, template_id, 'myform')
-    .then(() => {
-      alert('¡Se ha notificado al Anfitrión!');
-      myform.find('button').text('Send');
-    }, (err) => {
-      alert('Send email failed!\r\n Response:\n ' + JSON.stringify(err));
-      myform.find('button').text('Send');
+  let idVisit = document.getElementById('visitId').value;
+  db.collection('visitors').doc(idVisit).get()
+    .then(visitor => {
+      let emailValue = visitor.data().hostEmail;
+      document.getElementById('notificationBtn').style.display = 'none';
+      document.getElementById('myform').innerHTML =
+        `<label>Notificar a Anfitrión</label>
+      <input type="email" name="to_email" id="hostEmail" value="${emailValue}">
+      <button id="sendEmail" onclick="sendEmailTo()">
+      Notificar
+      </button>`;
     });
-  return false;
 });

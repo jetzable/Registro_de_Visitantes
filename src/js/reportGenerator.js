@@ -86,6 +86,11 @@ document.getElementById('searchReport').addEventListener('click', event => {
 document.getElementById('logOutBtn').addEventListener('click', event => {
   event.preventDefault();
   signOutUser();
-  swal('La sesión se cerró correctamente');
-  location.href = ('login.html');
+  swal({
+    type: 'success',
+    title: '¡Hasta Pronto!',
+    text: 'Tu sesión se cerró correctamente.',
+    showCloseButton: true,
+  });
+  location.href = ('../index.html');
 });
