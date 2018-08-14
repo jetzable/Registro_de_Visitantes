@@ -11,20 +11,18 @@
   <!-- Adding fontawesome to use icons-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
   <title>VisitApp Admin Dashboard</title>
 </head>
 
 <body>
   <header>
-    <div class="menu">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#">VisitApp</a>
-
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active">
@@ -35,7 +33,7 @@
             <li class="nav-item">
               <a class="nav-link" id="checkIn" href="checkIn.html">Check-In</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" id="registerForm" href="newVisit.html">Registro de Visitante</a>
                 <span class="sr-only"></span>
               </li>
@@ -46,18 +44,13 @@
               <a class="nav-link" id="logOutBtn">Cerrar Sesión</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline my-2 my-sm-0" type="button" id="searchText">Buscar</button>
-          </form>
         </div>
       </nav>
-    </div>
   </header>
   <div class="container-fluid">
     <div class="row">
-      <div class="result col-md-12">
-        <table class="table table-hover responsive text-center">
+      <div class="result col-md-12 table-responsive">
+        <table class="table table-hover text-center">
           <thead id="tableHeader" class="thead-dark">
             <tr>
               <th scope="col">#</th>

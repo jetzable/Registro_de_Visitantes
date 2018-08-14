@@ -11,14 +11,14 @@
   <!-- Adding fontawesome to use icons-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
   <title>VisitApp Admin Dashboard</title>
 </head>
 
 <body>
   <header>
     <div class="menu">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -27,7 +27,7 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" id="visitsToday" href="dashboard.html">Visitas del Día
                 <span class="sr-only">(current)</span>
               </a>
@@ -35,11 +35,11 @@
             <li class="nav-item">
               <a class="nav-link" id="checkIn" href="checkIn.html">Check-In</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" id="registerForm" href="newVisit.html">Registro de Visitante</a>
               <span class="sr-only"></span>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" id="reportsGenerator" href="reports.html">Generar reporte</a>
             </li>
             <li class="nav-item">
@@ -47,7 +47,7 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control form-control1 mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline my-2 my-sm-0" type="button" id="searchText">Buscar</button>
           </form>
         </div>
@@ -56,13 +56,13 @@
   </header>
   <div class="container-fluid">
     <div class="row">
-      <div class="search col-lg-6 col-md-12">
+      <div class="search col-lg-4 col-md-4 p-4">
         <form class="form-horizontal">
+          <h3>Busqueda de usuarios</h3>
           <!-- Select Basic -->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="selectbasic">Buscar Por: </label>
-            <div class="col-md-4">
-              <select id="selectOptionToSearch" name="selectbasic" class="form-control">
+          <div class="form-group col-md-4 row mx-3 mt-4"> 
+            <label class="control-label" for="selectbasic"> <strong>Busqueda por:</strong> </label>
+              <select id="selectOptionToSearch" name="selectbasic" class="form-control form-control1 ml-4 ml-md-0">
                 <option value="visitorName">Visitante</option>
                 <option value="date">Fecha</option>
                 <option value="idVisit">ID de Registro</option>
@@ -70,26 +70,22 @@
                 <option value="hostName">Anfitrión</option>
                 <option value="company">Empresa</option>
               </select>
-            </div>
-          </div>
+          </div> <br/>
           
           <!-- Search input-->
-          <div id="searchInputOption" class="form-group">
+          <div id="searchInputOption" class="form-group form-control1 col-md-5 search-option">
             
           </div>
           
           <!-- Button -->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="searchReport"></label>
-            <div class="col-md-4">
-              <button id="searchReport" name="searchReport" class="btn btn-primary">Buscar</button>
+            <div class="col-md-4 p-4">
+              <button id="searchReport" name="searchReport" class="btn btn-dark btn-block">Buscar</button>
             </div>
-          </div>
           </form>
           
       </div>
-      <div id="searchResult" class="search col-lg-6 col-md-12">
-        <table class="table table-hover responsive text-center">
+      <div id="searchResult" class="search col-lg-8 col-md-12 table-responsive">
+        <table class="table table-hover text-center">
           <thead id="tableHeader" class="thead-dark">
             <tr>
               <th scope="col">#</th>
@@ -102,6 +98,7 @@
           <tbody id="tableData">
 
           </tbody>
+          </table>
       </div>
     </div>
   </div>
