@@ -67,10 +67,9 @@ window.verifyAccountWithEmail = () => {
 };
 
 
-window.addingRegister = (visitorName, email, date, company, host, photoLink) => {
+window.addingRegister = (visitorName, date, company, host, photoLink) => {
   db.collection('visitors').add({
     name: visitorName,
-    email: email,
     date: date,
     company: company,
     hostName: host,
@@ -232,4 +231,17 @@ window.generateReport = (option, search) => {
 
 window.sendRegistrationNotification = () => {
   emailjs.init('user_QLZGa5y016AM22q4VSQCS');
+};
+
+window.emailDataBase = (hostName) => {
+  db.collection('emailHost').add({
+    hostNameValue: hostName
+  })
+    .then((docRef) => {
+      console.log('Document written with ID: ', docRef.id);
+      sendVisitNotification(docRef.id);
+    })
+    .catch((error) => {
+      console.error('Error adding document: ', error);
+    });
 };

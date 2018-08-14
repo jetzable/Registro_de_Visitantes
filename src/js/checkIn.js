@@ -23,10 +23,13 @@ const drawValidatingResults = (matchResult) => {
                 <h4 class="card-title">${matchResult.name}</h4>
                 <h5 class="card-text">${matchResult.hostName}</h5>
                 <h5 class="card-text">${matchResult.date}</h5>
-                <a class="btn btn-primary">Confirmar</a>
+                <a class="btn btn-primary" id="sendNotification">Confirmar</a>
               </div>
             </div>
           </div>`;
+
+  let nameValue = matchResult.hostName;
+  emailDataBase(nameValue);
 };
 
 document.getElementById('validateChechIn').addEventListener('click', event => {
@@ -42,3 +45,7 @@ document.getElementById('logOutBtn').addEventListener('click', event => {
   swal('La sesión se cerró correctamente');
   location.href = ('login.html');
 });
+
+const confirm = (hostNameValue) => {
+  location.href = ('notification.html');
+};
