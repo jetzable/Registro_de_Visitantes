@@ -15,14 +15,14 @@
   <!-- Adding EmailJS -->
   <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
   
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
   <title>VisitApp Check-In</title>
 </head>
 
 <body>
   <header>
     <div class="menu">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
               <a class="nav-link" id="checkIn" href="checkIn.html">Check-In</a>
               <span class="sr-only">(current)</span>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" id="registerForm" href="newVisit.html">Registro de Visitante</a>
               <span class="sr-only"></span>
             </li>
@@ -57,16 +57,19 @@
       </nav>
     </div>
   </header>
-  <div class="container-fluid">
+  <div class="container-fluid id-register mt-4">
     <div class="row">
-      <div class="result col-md-12">
-        <form id="content" class="visit-form">
-          <h1>Registra un Visitante: </h1>
-          <div class="form-group">
-            <label for="visitCheckIn">ID de Registro: </label>
+      <div class="result col-md-12 pt-4" align="center">
+        <form id="content" class="visit-form mt-4">
+          <h3>Registra un Visitante: </h3>
+          <div class="form-group mt-4"> 
+            <label for="visitCheckIn">  ID de Registro: </label>
             <input type="text" name="id" id="idCheckIn">
+            <div class="col-md-2 mt-4"> 
+            <button class="btn btn-dark btn-lg btn-block" id="validateChechIn">Check-In</button>
+            </div>
           </div>
-          <button class="btn btn-outline" id="validateChechIn">Check-In</button>
+          
         </form>
       </div>
     </div>

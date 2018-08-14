@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
   <!-- Addign SweetAlert for alerts -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
   <link rel="stylesheet" href="../css/takeAPicture.css">
   <title>VisitApp Registra tu Visita</title>
 </head>
@@ -23,7 +23,7 @@
 <body>
     <header>
         <div class="menu">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
               aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
                 <li class="nav-item">
                   <a class="nav-link" id="visitsToday" href="dashboard.html">Visitas del Día</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                   <a class="nav-link" id="checkIn" href="checkIn.html">Check-In</a>
                   <span class="sr-only">(current)</span>
                 </li>
@@ -58,10 +58,10 @@
           </nav>
         </div>
       </header>
-  <div class="container-fluid">
+  <div class="container-fluid" align="center">
     <div class="row">
-      <div class="col-md-12 align-form">
-        <h1>¡Registra un nuevo Visitante!</h1>
+      <div class="col-md-12 align-form ">
+        <h4>¡Registra un nuevo Visitante!</h4>
         <form class="form-horizontal form-group mt-4">          
           <div class="mt-4 col-md-4 form-group">
             <label class=" control-label" for="visitorName"><strong><i class="fas fa-user"></i> Nombre </strong></label>
@@ -77,8 +77,8 @@
             </select>
           </div>
           <div class="mt-4 col-md-4 form-group">
-            <label class=" control-label" for="hostName"><strong><i class="fas fa-user-tie"></i> ¿A quien visita?</strong></label>
-            <select id="hostName" name="hostName" class="form-control" aria-placeholder="Anfitrión">
+            <label class=" control-label " for="hostName"><strong><i class="fas fa-user-tie"></i> ¿A quien visita?</strong></label>
+<select id="hostName" name="hostName" class="form-control" aria-placeholder="Anfitrión">
             </select>
           </div>
           

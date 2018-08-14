@@ -1,0 +1,83 @@
+
+body {
+    margin: 0;
+    padding: 0%;
+    background-color: #ffffff36 !important
+}
+
+.navbar :hover {
+    color: #D6A002 !important;
+}
+
+.table-responsive {
+    display: table !important;
+    padding: 0;
+}
+
+.form-control1 {
+    width: auto !important;
+}
+#searchInput{
+    width: auto !important;
+}
+
+.visit-form {
+    height: 100vh;
+}
+
+/* Media Queries */
+
+/* Small devices */
+
+@media (min-width: 320px) {
+    html {
+        background-color: #DAA601 !important;
+        height: 100vh;
+    }
+    .btn {
+        font-size: 1.45rem !important
+    }
+}
+
+/*  large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1024px) {
+    html {
+        background-image: url("../images/backgrounds/desktopTransparent.png");
+        height: 100vh;
+    }
+    .logo {
+        margin-top: 3%;
+        width: 75%;
+        text-align: center;
+        margin-left: 15%;
+    }
+    .btn {
+        font-size: 1.50rem !important
+    }
+    .btn-register {
+        margin-right: 10%;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1024.5px) {
+    html {
+        background-image: url("../images/backgrounds/desktoptr2475x1474.png");
+        height: 100vh;
+    }
+    .logo {
+        margin-top: 3%;
+        width: 75%;
+        text-align: center;
+        margin-left: 15%;
+    }
+    .btn {
+        font-size: 1.50rem !important
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+}
