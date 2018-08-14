@@ -67,14 +67,15 @@ window.verifyAccountWithEmail = () => {
 };
 
 
-window.addingRegister = (visitorName, email, date, company, host) => {
+window.addingRegister = (visitorName, email, date, company, host, photoLink) => {
   db.collection('visitors').add({
     name: visitorName,
     email: email,
     date: date,
     company: company,
     hostName: host,
-    status: 'pending'
+    status: 'pending',
+    photo: photoLink
   })
     .then((docRef) => {
       console.log('Document written with ID: ', docRef.id);
@@ -227,4 +228,8 @@ window.generateReport = (option, search) => {
         drawSearchResults(matchArray);
       });
   }
+};
+
+window.sendRegistrationNotification = () => {
+  emailjs.init('user_QLZGa5y016AM22q4VSQCS');
 };

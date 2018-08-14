@@ -16,6 +16,7 @@
   <!-- Addign SweetAlert for alerts -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/takeAPicture.css">
   <title>VisitApp Registra tu Visita</title>
 </head>
 
@@ -24,6 +25,29 @@
     <div class="row">
       <div class="col-md-12 align-form">
         <form class="form-horizontal form-group">
+            <div class="app">
+
+                <a href="#" id="start-camera" class="visible">Iniciar Demo</a>
+                <video id="camera-stream"></video>
+                <img id="snap">
+        
+                <p id="error-message"></p>
+        
+                <div class="controls">
+                  <a href="#" id="delete-photo" title="Eliminar Foto" class="disabled">
+                    <i class="material-icons">delete</i>
+                  </a>
+                  <a href="#" id="take-photo" title="Tomar Foto">
+                    <i class="material-icons">camera_alt</i>
+                  </a>
+                  <a href="#" id="download-photo" download="foto.jpg" title="Descargar Foto" class="disabled">
+                    <i class="material-icons">file_download</i>
+                  </a>
+                </div>
+        
+                <canvas></canvas>
+        
+              </div>
           <label class="col-md-4 control-label" for="visitorName"></label>
           <div class="col-md-4">
             <input id="visitorName" name="visitorName" type="text" placeholder="Escribe Tu Nombre" class="form-control input-md" required="">
@@ -54,8 +78,9 @@
       </div>
     </div>
   </div>
-  <script src="../js/init.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script src="../js/init.js"></script>
+  <script src="../js/takeAPicture.js"></script>
   <script src="../js/visitForm.js"></script>
 </body>
 
