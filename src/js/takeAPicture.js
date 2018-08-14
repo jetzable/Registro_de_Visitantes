@@ -53,6 +53,7 @@ start_camera.addEventListener('click', function(e) {
 
 take_photo_btn.addEventListener('click', function(e) {
   e.preventDefault();
+
   var snap = takeSnapshot();
 
   // Mostramos la imagen
@@ -138,4 +139,4 @@ function hideUI() {
   video.classList.remove('visible');
   snap.classList.remove('visible');
   error_message.classList.remove('visible');
-};
+}

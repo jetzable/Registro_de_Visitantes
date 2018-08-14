@@ -61,18 +61,24 @@ createCompanySelect();
 document.getElementById('visitRegister').addEventListener('click', event => {
   event.preventDefault();
   let visitorName = document.getElementById('visitorName').value;
-  let visitorEmail = document.getElementById('visitorEmail').value;
   let visitDate = document.getElementById('visitDate').value;
   let companyName = document.querySelector('#companyName').value;
   let hostName = document.querySelector('#hostName').value;
   let photoSnap = document.getElementById('snap').getAttribute('src');
-  addingRegister(visitorName, visitorEmail, visitDate, companyName, hostName, photoSnap);
-  document.getElementById('visitorName').value = '';
-  document.getElementById('visitorEmail').value = '';
-  document.getElementById('visitDate').value = '';
-  document.querySelector('#companyName').value = '';
-  document.querySelector('#hostName').value = '';
-  document.getElementById('snap').innerHTML = '';
+  db.collection('host').get()
+    .then(list => {
+      list.forEach(host => {
+        if (hostName === host.data().hostName) {
+          let hostEmail = host.data().hostEmail;
+          addingRegister(visitorName, visitDate, companyName, hostName, photoSnap, hostEmail);
+          document.getElementById('visitorName').value = '';
+          document.getElementById('visitDate').value = '';
+          document.querySelector('#companyName').value = '';
+          document.querySelector('#hostName').value = '';
+          document.getElementById('snapShot').innerHTML = '';
+        }
+      })
+    })
 });
 
 const popId = (id) => {
@@ -83,4 +89,20 @@ const popId = (id) => {
     showCloseButton: true,
   });
 };
+
+const backToBegin = () => {
+  location.href = ('../index.html');
+};
+
+document.getElementById('logOutBtn').addEventListener('click', event => {
+  event.preventDefault();
+  signOutUser();
+  swal({
+    type: 'success',
+    title: '¡Hasta Pronto!',
+    text: 'Tu sesión se cerró correctamente.',
+    showCloseButton: true,
+  });
+  location.href = ('../index.html');
+});
 

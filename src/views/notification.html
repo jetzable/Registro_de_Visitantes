@@ -8,17 +8,18 @@
   <body>
     <form id="myform" method="post">
   <label>Notificar a Anfitrión</label>
-  <input type="text" name="to_email" placeholder="Email de Anfitrión"/>
-  <br><br>
-  <button>
-  Send
+  <input type="text" name="idVisit" id="visitId" placeholder="Ingresa el ID del Visitante">
+  <button id="notificationBtn">
+  Buscar Anfitrión
   </button>
   </form>
-
+  <!-- Adding Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
   <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
   </body>
   <script src="../js/init.js"></script>
   <script src="../js/notification.js"></script>
+  
 </html>

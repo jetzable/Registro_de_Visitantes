@@ -67,15 +67,15 @@ window.verifyAccountWithEmail = () => {
 };
 
 
-window.addingRegister = (visitorName, email, date, company, host, photoLink) => {
+window.addingRegister = (visitorName, date, company, host, photoLink, hostMail) => {
   db.collection('visitors').add({
     name: visitorName,
-    email: email,
     date: date,
     company: company,
     hostName: host,
     status: 'pending',
-    photo: photoLink
+    photo: photoLink,
+    hostEmail: hostMail
   })
     .then((docRef) => {
       console.log('Document written with ID: ', docRef.id);
@@ -231,5 +231,26 @@ window.generateReport = (option, search) => {
 };
 
 window.sendRegistrationNotification = () => {
-  emailjs.init('user_QLZGa5y016AM22q4VSQCS');
+  emailjs.init("user_AzjHoxFk1xXHh8iUuRm5M");
+};
+
+window.sendEmailTo = () => {
+  var myform = $("form#myform");
+  myform.submit(function (event) {
+    event.preventDefault();
+    // Change to your service ID, or keep using the default service
+    var service_id = "default_service";
+    var template_id = "notificacion";
+    myform.find("button").text("Sending...");
+    emailjs.sendForm(service_id, template_id, "myform")
+      .then(function () {
+        alert("Sent!");
+        myform.find("button").text("Send");
+      }, function (err) {
+        alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+        myform.find("button").text("Send");
+      });
+    return false;
+  });
+  location.href = ('dashboard.html');
 };
