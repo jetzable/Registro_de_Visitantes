@@ -8,7 +8,7 @@
 }
 
 html{
-    background-color: #fff;
+    /* background-color: #fff; */
     font:normal 16px/1.5 sans-serif;
     color: #333;
     background: url(background.jpg) no-repeat center center fixed; 
@@ -25,12 +25,15 @@ h3{
     text-align: center;
 }
 
+label{
+    text-align: left;
+}
 
 .container{
     max-width: 700px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #efefef;
+    /* background-color: #efefef; */
 }
 
 .app{
@@ -180,5 +183,62 @@ h3{
 
     .app .controls #takePhoto i{
         font-size: 18px;
+    }
+}
+
+/* Media Queries */
+
+/* Small devices */
+
+@media (min-width: 320px) {
+    html {
+        background-color: #DAA601;
+        height: 100vh;
+    }
+    .btn {
+        font-size: 1.45rem !important
+    }
+}
+
+/*  large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1024px) {
+    html {
+        background-image: url("../images/backgrounds/desktop1024-x1474.png");
+        height: 100vh;
+    }
+    .logo {
+        margin-top: 3%;
+        width: 75%;
+        text-align: center;
+        margin-left: 15%;
+    }
+    .btn {
+        font-size: 1.50rem !important
+    }
+    .btn-register {
+        margin-right: 10%;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1024.5px) {
+    html {
+        background-image: url("../images/backgrounds/desktop2475x1474.png");
+        height: 100vh;
+    }
+    .logo {
+        margin-top: 3%;
+        width: 75%;
+        text-align: center;
+        margin-left: 15%;
+    }
+    .btn {
+        font-size: 1.50rem !important
+    }
+    h2 {
+        font-size: 2.5rem;
     }
 }

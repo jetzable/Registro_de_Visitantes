@@ -24,53 +24,56 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 align-form">
-        <form class="form-horizontal form-group">
-            <div id="photoShot" class="app">
-
-                <a class="btn-primary" href="#" id="start-camera" class="visible">Como parte de tu registro tomaremos una foto!</a>
-                <video id="camera-stream"></video>
-                <img id="snap">
-        
-                <p id="error-message"></p>
-        
-                <div class="controls">
-                  <a href="#" id="delete-photo" title="Eliminar Foto" class="disabled">
-                    <i class="material-icons">delete</i>
-                  </a>
-                  <a href="#" id="take-photo" title="Tomar Foto">
-                    <i class="material-icons">camera_alt</i>
-                  </a>
-                  <a href="#" id="download-photo" download="foto.jpg" title="Descargar Foto" class="disabled">
-                    <i class="material-icons">file_download</i>
-                  </a>
-                </div>
-        
-                <canvas></canvas>
-        
-              </div>
-          <label class="col-md-4 control-label" for="visitorName"></label>
-          <div class="col-md-4">
+        <h1>¡Bienvenido!</h1>
+        <form class="form-horizontal form-group mt-4">          
+          <div class="mt-4 col-md-4 form-group">
+            <label class=" control-label" for="visitorName"><strong><i class="fas fa-user"></i> Nombre </strong></label>
             <input id="visitorName" name="visitorName" type="text" placeholder="Escribe Tu Nombre" class="form-control input-md" required="">
-          </div>
-          <label class="col-md-4 control-label" for="visitDate"></label>
-          <div class="col-md-4">
+          </div> 
+          <div class=" mt-4 col-md-4 form-group">
+            <label class=" control-label" for="visitDate"> <strong><i class="far fa-calendar-check"></i> ¿Cuándo nos visitarás?</strong> </label>
             <input id="visitDate" name="visitDate" type="date" placeholder="¿Cuándo nos visitarás?" class="form-control input-md" required="">
           </div>
-          <label class="col-md-4 control-label" for="companyName"></label>
-          <div class="col-md-4">
+          <div class="mt-4 col-md-4 form-group">
+            <label class=" control-label" for="companyName"> <strong><i class="fas fa-building"></i> Empresa que visitas</strong></label>
             <select id="companyName" name="companyName" class="form-control" aria-placeholder="Empresa">
             </select>
           </div>
-          <label class="col-md-4 control-label" for="hostName"></label>
-          <div class="col-md-4">
+          <div class="mt-4 col-md-4 form-group">
+            <label class=" control-label" for="hostName"><strong><i class="fas fa-user-tie"></i> ¿A quien visitas?</strong></label>
             <select id="hostName" name="hostName" class="form-control" aria-placeholder="Anfitrión">
             </select>
           </div>
-          <label class="col-md-4 control-label" for="visitRegister"></label>
+          
+          <div class="app">
+            <p><strong>¡Sonrie! Toma una selfie para un registro más seguro <i class="fas fa-smile-wink"></i></strong></p>
+            <a href="#" id="start-camera" class="visible"></a>
+            <video id="camera-stream"></video>
+            <img id="snap">
+
+            <p id="error-message"></p>
+
+            <div class="controls">
+              <a href="#" id="delete-photo" title="Eliminar Foto" class="disabled">
+                <i class="material-icons">delete</i>
+              </a>
+              <a href="#" id="take-photo" title="Tomar Foto">
+                <i class="material-icons">camera_alt</i>
+              </a>
+              <a href="#" id="download-photo" download="foto.jpg" title="Descargar Foto" class="disabled">
+                <i class="material-icons">file_download</i>
+              </a>
+            </div>
+
+            <canvas></canvas>
+
+          </div>
+
           <div class="col-md-4">
-            <button id="visitRegister" name="visitRegister" class="btn btn-primary">Registrar Visita</button>
+            <button id="visitRegister" name="visitRegister" class="btn btn-dark btn-block">Finalizar Registro</button>
           </div>
         </form>
+
       </div>
     </div>
   </div>
