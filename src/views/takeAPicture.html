@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Ejemplo de Tomarte una Foto con Javascript</title>
-<meta charset="utf-8" />
-<meta name="robots" content="noindex">
-<link rel="stylesheet" type="text/css" href="../css/takeAPicture.css" media="all" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Adding Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <!-- Adding fontawesome to use icons-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+
+  <!-- Adding EmailJS -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+  <link rel="stylesheet" href="../css/takeAPicture.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <title>VisitApp Foto de Registro</title>
 </head>
+
 <body>
-<h3>Tomarte una foto con JavaScript</h3>
+  <h3>Tomate una foto</h3>
 
-<div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="app">
 
-  <div class="app">
+        <a href="#" id="start-camera" class="visible">Iniciar Demo</a>
+        <video id="camera-stream"></video>
+        <img id="snap">
 
-    <a href="#" id="start-camera" class="visible">Iniciar Demo</a>
-    <video id="camera-stream"></video>
-    <img id="snap">
+        <p id="error-message"></p>
 
-    <p id="error-message"></p>
+        <div class="controls">
+          <a href="#" id="delete-photo" title="Eliminar Foto" class="disabled">
+            <i class="material-icons">delete</i>
+          </a>
+          <a href="#" id="take-photo" title="Tomar Foto">
+            <i class="material-icons">camera_alt</i>
+          </a>
+          <a href="#" id="download-photo" download="foto.jpg" title="Descargar Foto" class="disabled">
+            <i class="material-icons">file_download</i>
+          </a>
+        </div>
 
-    <div class="controls">
-      <a href="#" id="delete-photo" title="Eliminar Foto" class="disabled"><i class="material-icons">delete</i></a>
-      <a href="#" id="take-photo" title="Tomar Foto"><i class="material-icons">camera_alt</i></a>
-      <a href="#" id="download-photo" download="foto.jpg" title="Descargar Foto" class="disabled"><i class="material-icons">file_download</i></a>  
+        <canvas></canvas>
+
+      </div>
     </div>
-
-    <canvas></canvas>
-
   </div>
-
-</div>
-<script src="../js/takeAPicture.js"></script>
+  <script src="../js/takeAPicture.js"></script>
 </body>
+
 </html>

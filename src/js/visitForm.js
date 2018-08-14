@@ -65,12 +65,14 @@ document.getElementById('visitRegister').addEventListener('click', event => {
   let visitDate = document.getElementById('visitDate').value;
   let companyName = document.querySelector('#companyName').value;
   let hostName = document.querySelector('#hostName').value;
-  addingRegister(visitorName, visitorEmail, visitDate, companyName, hostName);
+  let photoSnap = document.getElementById('snap').getAttribute('src');
+  addingRegister(visitorName, visitorEmail, visitDate, companyName, hostName, photoSnap);
   document.getElementById('visitorName').value = '';
   document.getElementById('visitorEmail').value = '';
   document.getElementById('visitDate').value = '';
   document.querySelector('#companyName').value = '';
   document.querySelector('#hostName').value = '';
+  document.getElementById('snap').innerHTML = '';
 });
 
 const popId = (id) => {
@@ -82,9 +84,3 @@ const popId = (id) => {
   });
 };
 
-document.getElementById('logOutBtn').addEventListener('click', event => {
-  event.preventDefault();
-  signOutUser();
-  swal('La sesión se cerró correctamente');
-  location.href = ('login.html');
-});
