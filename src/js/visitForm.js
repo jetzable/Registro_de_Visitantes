@@ -77,8 +77,8 @@ document.getElementById('visitRegister').addEventListener('click', event => {
           document.querySelector('#hostName').value = '';
           document.getElementById('snapShot').innerHTML = '';
         }
-      })
-    })
+      });
+    });
 });
 
 const popId = (id) => {
